@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="IE=9" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8" />
+    <title>Selvevaluering</title>
+    <link href="/Evaluering/Content/Reset.css" rel="stylesheet" media="all" type="text/css" />
+    <link href="/Evaluering/Content/Site.css" rel="stylesheet" media="all" type="text/css" />
+    <link href="/Evaluering/Content/themes/base/jquery.ui.custom.css" rel="stylesheet" media="all" type="text/css" />
+    <link href="/Evaluering/Content/themes/base/tipTip.css" rel="stylesheet" media="all" type="text/css" />
+    <script src="/Evaluering/Scripts/jquery-1.6.1.min.js" type="text/javascript"></script>
+    <script src="/Evaluering/Scripts/jquery-ui-1.8.13.min.js" type="text/javascript"></script>
+    <script src="/Evaluering/Scripts/jquery.unobtrusive-ajax.js" type="text/javascript"></script>
+    <script src="/Evaluering/Scripts/modernizr-1.7.min.js" type="text/javascript"></script>
+    <script src="/Evaluering/Scripts/jquery.tablesorter.js" type="text/javascript"></script>
+    <script src="/Evaluering/Scripts/Evaluering.js" type="text/javascript"></script>
+    <script src="/Evaluering/Scripts/jquery.tipTip.js" type="text/javascript"></script>
+
+<body>
+    
+<div class="header clearfix">
+    <h1><span id="username-header"><a href=/Evaluering/>Tore Lervik</a></span></h1>
+
+    
+        <h1><span class="admin-header"><a href=/Evaluering/Admin>Admin</a></span></h1>
+    
+    <div style="float:right; margin-top: 5px; font-style: italic;">Målet med evaluering i BEKK er å sikre at hver enkelt blir en stadig bedre konsulent. Det kan du bidra til.</div>
+</div>
+
+
+    
+<script src="/Evaluering/Scripts/SelfEvaluation/Index.js" type="text/javascript"></script>
+<script src="/Evaluering/Scripts/date.format.js" type="text/javascript"></script>
+<script src="/Evaluering/Scripts/SaveForm.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function () {
+            
+            setAutoSave(); 
+            
+        bindFormSubmit();
+        bindFormFocus(".evaluation-category textarea");
+        bindUrl("Index_Home", "/Evaluering/");
+    });
+    
+</script>
+
+    <div class="self-evaluation dashboard-element employee-info">
+        <div class="dashboard-element-header">
+            <h1>Selvevaluering for Tore Lervik i Q2 &amp; Q3</h1>
+        </div>
+        <div class="dashboard-element-body">
+            <div class="inline-block" style="width: 100%;">
+                <table class="table1style no-border first-bold"style="width: 100%; margin-top: 10px;">
+                    <tbody>
+                        <tr>
+                            <td style="width: 160px;">Periode:</td>
+                            <td class=""> 01.04.2011 - 30.09.2011</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 160px;">Stilling:</td>
+                            <td class=""> Systemutvikler forvaltning, Technology</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 160px;">Senioritet:</td>
+                            <td class=""> Konsulent</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 160px;">Faktureringsgradmål:</td>
+                            <td class=""> 80 %</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 160px;">Bonusmål:</td>                    
+                            <td> -</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 160px;">Faktureringsgrad (FG):</td>
+                            <td> - %</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                
+            </div>
+        </div>
+    </div>
+    
+    <div class="self-evaluation dashboard-element menu-right">
+    <div class="dashboard-element-body" style="border-top: none;">
+        <div class="inline-block" style="width: 100%;">
+            <div class="evaluation-links">
+                <a href="/Evaluering/SelfEvaluation/Pdf/461" target="_blank">
+                    <div class="fancybutton wide">
+                        <div class="fancybutton-part2">
+                            <div class="fancybutton-text">Skriv ut selvevaluering</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="page-container clearfix">
+        <div class="form-container">
+            <span class="last-save" style="font-style: italic;display: block;padding: 10px;margin-top: -30px;"></span>
+<form action="/Evaluering/SelfEvaluation/Save" data-ajax="true" data-ajax-failure="updateLastSaveFieldFailed" data-ajax-success="updateLastSaveField" id="form0" method="post">                <fieldset>
+                <input data-val="true" data-val-number="The field EmployeeId must be a number." data-val-required="The EmployeeId field is required." id="EmployeeId" name="EmployeeId" type="hidden" value="461" />
+                <input data-val="true" data-val-number="The field Id must be a number." data-val-required="The Id field is required." id="SelfEvaluation_Id" name="SelfEvaluation.Id" type="hidden" value="55" />
+                <input data-val="true" data-val-number="The field Id must be a number." data-val-required="The Id field is required." id="SelfEvaluation_Evaluation_Id" name="SelfEvaluation.Evaluation.Id" type="hidden" value="644" />
+                <input data-val="true" data-val-number="The field BillingGoal must be a number." id="SelfEvaluation_Evaluation_Employee_BillingGoal" name="SelfEvaluation.Evaluation.Employee.BillingGoal" type="hidden" value="80" />
+                <input data-val="true" data-val-number="The field BillingGrade must be a number." id="SelfEvaluation_Evaluation_BillingGrade" name="SelfEvaluation.Evaluation.BillingGrade" type="hidden" value="" />
+                <input data-val="true" data-val-number="The field Bonus must be a number." id="SelfEvaluation_Evaluation_Bonus" name="SelfEvaluation.Evaluation.Bonus" type="hidden" value="" />
+                <input data-val="true" data-val-number="The field BonusGoal must be a number." id="SelfEvaluation_Evaluation_BonusGoal" name="SelfEvaluation.Evaluation.BonusGoal" type="hidden" value="" />
+                <input data-val="true" data-val-number="The field Id must be a number." data-val-required="The Id field is required." id="SelfEvaluation_Evaluation_Employee_Id" name="SelfEvaluation.Evaluation.Employee.Id" type="hidden" value="461" />
+                <input data-val="true" data-val-number="The field Grade must be a number." id="SelfEvaluation_Evaluation_Grade" name="SelfEvaluation.Evaluation.Grade" type="hidden" value="" />
+                <input id="SelfEvaluation_Evaluation_Employee_Name" name="SelfEvaluation.Evaluation.Employee.Name" type="hidden" value="Tore Lervik" />
+
+                <div class="feedback-category" style="width: 100%;">
+                    <div class="dashboard-element-header">
+                        <h1><label for="SelfEvaluation_Projects">Prosjekter og roller i perioden</label></h1>
+                    </div>
+                    <div class="dashboard-element-body evaluation-category" data-inspiration="Prosjekter og roller du har hatt i denne evalueringsperioden" style="width: 100%;">
+                        <textarea class="auto-expand" cols="20" id="SelfEvaluation_Projects" name="SelfEvaluation.Projects" rows="2" style="width: 96.5%; margin: 10px;">
+Bekk
+ - Infrastruktur (TeamCity, byggeskjerm og overv&#229;king)
+ - Internsystemer
+ - Evalueringsapplikasjon
+ - Kompetansedashboard
+ - Kalender
+Eidsiva
+Moelven
+Frittsykehusvalg
+Avinor</textarea>
+                    </div>
+                </div>
+
+                <div class="feedback-category" style="width: 100%;">
+                    <div class="dashboard-element-header">
+                        <h1><label for="SelfEvaluation_Knowledge">Viktigste kompetanse bygget i perioden</label></h1>
+                    </div>
+                    <div class="dashboard-element-body evaluation-category" data-inspiration="Viktigste kompetanse du har bygget i denne evalueringsperioden" style="width: 100%;">
+                        <textarea class="auto-expand" cols="20" id="SelfEvaluation_Knowledge" name="SelfEvaluation.Knowledge" rows="2" style="width: 96.5%; margin: 10px;">
+Windows Phone
+ASP.NET Mvc3</textarea>
+                    </div>
+                </div>
+                
+<input data-val="true" data-val-number="The field Id must be a number." data-val-required="The Id field is required." id="SelfEvaluation_Categories_0__Id" name="SelfEvaluation.Categories[0].Id" type="hidden" value="1" /><input id="SelfEvaluation_Categories_0__Description" name="SelfEvaluation.Categories[0].Description" type="hidden" value="" /><input id="SelfEvaluation_Categories_0__Name" name="SelfEvaluation.Categories[0].Name" type="hidden" value="Kundetilfredshet" />                        <div class="feedback-category">
+                            <table class="evaluation-form-table">
+                                <thead>
+                                    <tr class="evaluation-form-header">
+                                        <th colspan="3" style="text-align: left;"><h1>Kundetilfredshet </h1></th>
+                                        <th colspan="5"></th>
+                                    </tr> 
+                                    <tr class="column-header">
+                                        <th>Vekt</th>
+                                        <th style="width: 50%;">Emne</th>
+                                        <th style="width: 50%;">Eksempel/Kommentar</th>
+                                        <th colspan="5">Karakter</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+<input data-val="true" data-val-number="The field Id must be a number." data-val-required="The Id field is required." id="SelfEvaluation_Categories_0__Questions_0__Id" name="SelfEvaluation.Categories[0].Questions[0].Id" type="hidden" value="3" /><input id="SelfEvaluation_Categories_0__Questions_0__Text" name="SelfEvaluation.Categories[0].Questions[0].Text" type="hidden" value="Kunde er fornøyd med konsulentens leveranser" /><input id="SelfEvaluation_Categories_0__Questions_0__Inspiration" name="SelfEvaluation.Categories[0].Questions[0].Inspiration" type="hidden" value=" - Kunde/prosjekt er fornøyd med konsulentens leveranser" /><input data-val="true" data-val-number="The field Weight must be a number." data-val-required="The Weight field is required." id="SelfEvaluation_Categories_0__Questions_0__Weight" name="SelfEvaluation.Categories[0].Questions[0].Weight" type="hidden" value="60" />                                        <tr class="evaluation-category" data-inspiration=" - Kunde/prosjekt er forn&#248;yd med konsulentens leveranser">
+                                            <td align="center">20%</td>
+                                            <td>Kunde er forn&#248;yd med konsulentens leveranser</td>
+                                            <td><textarea class="auto-expand" cols="20" id="SelfEvaluation_Categories_0__Questions_0__Comments" name="SelfEvaluation.Categories[0].Questions[0].Comments" rows="2" style="width: 98%;">
+</textarea></td>
+                                                <td class="grade-buttons">
+                                                    <input id="One-3" name="SelfEvaluation.Categories[0].Questions[0].Grade" type="radio" value="One" />
+                                                <label for="One-3">1</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input id="Two-3" name="SelfEvaluation.Categories[0].Questions[0].Grade" type="radio" value="Two" />
+                                                <label for="Two-3">2</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input checked="checked" id="Three-3" name="SelfEvaluation.Categories[0].Questions[0].Grade" type="radio" value="Three" />
+                                                <label for="Three-3">3</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input id="Four-3" name="SelfEvaluation.Categories[0].Questions[0].Grade" type="radio" value="Four" />
+                                                <label for="Four-3">4</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input id="Five-3" name="SelfEvaluation.Categories[0].Questions[0].Grade" type="radio" value="Five" />
+                                                <label for="Five-3">5</label>
+                                                </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </div>
+<input data-val="true" data-val-number="The field Id must be a number." data-val-required="The Id field is required." id="SelfEvaluation_Categories_1__Id" name="SelfEvaluation.Categories[1].Id" type="hidden" value="4" /><input id="SelfEvaluation_Categories_1__Description" name="SelfEvaluation.Categories[1].Description" type="hidden" value="" /><input id="SelfEvaluation_Categories_1__Name" name="SelfEvaluation.Categories[1].Name" type="hidden" value="Teamkvaliteter og kulturbygging" />                        <div class="feedback-category">
+                            <table class="evaluation-form-table">
+                                <thead>
+                                    <tr class="evaluation-form-header">
+                                        <th colspan="3" style="text-align: left;"><h1>Teamkvaliteter og kulturbygging </h1></th>
+                                        <th colspan="5"></th>
+                                    </tr> 
+                                    <tr class="column-header">
+                                        <th>Vekt</th>
+                                        <th style="width: 50%;">Emne</th>
+                                        <th style="width: 50%;">Eksempel/Kommentar</th>
+                                        <th colspan="5">Karakter</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+<input data-val="true" data-val-number="The field Id must be a number." data-val-required="The Id field is required." id="SelfEvaluation_Categories_1__Questions_0__Id" name="SelfEvaluation.Categories[1].Questions[0].Id" type="hidden" value="2" /><input id="SelfEvaluation_Categories_1__Questions_0__Text" name="SelfEvaluation.Categories[1].Questions[0].Text" type="hidden" value="Styrker teamfølelsen på prosjektet" /><input id="SelfEvaluation_Categories_1__Questions_0__Inspiration" name="SelfEvaluation.Categories[1].Questions[0].Inspiration" type="hidden" value="- Aktiv sosial tilstedeværelse
+- Interesse for andres oppgaver
+- Interesse for andres kompetanse
+- Lite problemorientering
+- Bygger andre sterke" /><input data-val="true" data-val-number="The field Weight must be a number." data-val-required="The Weight field is required." id="SelfEvaluation_Categories_1__Questions_0__Weight" name="SelfEvaluation.Categories[1].Questions[0].Weight" type="hidden" value="30" />                                        <tr class="evaluation-category" data-inspiration="- Aktiv sosial tilstedev&#230;relse<br />- Interesse for andres oppgaver<br />- Interesse for andres kompetanse<br />- Lite problemorientering<br />- Bygger andre sterke">
+                                            <td align="center">10%</td>
+                                            <td>Styrker teamf&#248;lelsen p&#229; prosjektet</td>
+                                            <td><textarea class="auto-expand" cols="20" id="SelfEvaluation_Categories_1__Questions_0__Comments" name="SelfEvaluation.Categories[1].Questions[0].Comments" rows="2" style="width: 98%;">
+</textarea></td>
+                                                <td class="grade-buttons">
+                                                    <input id="One-2" name="SelfEvaluation.Categories[1].Questions[0].Grade" type="radio" value="One" />
+                                                <label for="One-2">1</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input id="Two-2" name="SelfEvaluation.Categories[1].Questions[0].Grade" type="radio" value="Two" />
+                                                <label for="Two-2">2</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input checked="checked" id="Three-2" name="SelfEvaluation.Categories[1].Questions[0].Grade" type="radio" value="Three" />
+                                                <label for="Three-2">3</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input id="Four-2" name="SelfEvaluation.Categories[1].Questions[0].Grade" type="radio" value="Four" />
+                                                <label for="Four-2">4</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input id="Five-2" name="SelfEvaluation.Categories[1].Questions[0].Grade" type="radio" value="Five" />
+                                                <label for="Five-2">5</label>
+                                                </td>
+                                        </tr>
+<input data-val="true" data-val-number="The field Id must be a number." data-val-required="The Id field is required." id="SelfEvaluation_Categories_1__Questions_1__Id" name="SelfEvaluation.Categories[1].Questions[1].Id" type="hidden" value="4" /><input id="SelfEvaluation_Categories_1__Questions_1__Text" name="SelfEvaluation.Categories[1].Questions[1].Text" type="hidden" value="Er aktiv deltager på interne aktiviteter" /><input id="SelfEvaluation_Categories_1__Questions_1__Inspiration" name="SelfEvaluation.Categories[1].Questions[1].Inspiration" type="hidden" value="- Ikke-faglige aktiviteter
+- Fredagsmøter
+- Bedriftsidrett
+- Sosiale sammenkomster" /><input data-val="true" data-val-number="The field Weight must be a number." data-val-required="The Weight field is required." id="SelfEvaluation_Categories_1__Questions_1__Weight" name="SelfEvaluation.Categories[1].Questions[1].Weight" type="hidden" value="30" />                                        <tr class="evaluation-category" data-inspiration="- Ikke-faglige aktiviteter<br />- Fredagsm&#248;ter<br />- Bedriftsidrett<br />- Sosiale sammenkomster">
+                                            <td align="center">10%</td>
+                                            <td>Er aktiv deltager p&#229; interne aktiviteter</td>
+                                            <td><textarea class="auto-expand" cols="20" id="SelfEvaluation_Categories_1__Questions_1__Comments" name="SelfEvaluation.Categories[1].Questions[1].Comments" rows="2" style="width: 98%;">
+</textarea></td>
+                                                <td class="grade-buttons">
+                                                    <input id="One-4" name="SelfEvaluation.Categories[1].Questions[1].Grade" type="radio" value="One" />
+                                                <label for="One-4">1</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input id="Two-4" name="SelfEvaluation.Categories[1].Questions[1].Grade" type="radio" value="Two" />
+                                                <label for="Two-4">2</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input checked="checked" id="Three-4" name="SelfEvaluation.Categories[1].Questions[1].Grade" type="radio" value="Three" />
+                                                <label for="Three-4">3</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input id="Four-4" name="SelfEvaluation.Categories[1].Questions[1].Grade" type="radio" value="Four" />
+                                                <label for="Four-4">4</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input id="Five-4" name="SelfEvaluation.Categories[1].Questions[1].Grade" type="radio" value="Five" />
+                                                <label for="Five-4">5</label>
+                                                </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </div>
+<input data-val="true" data-val-number="The field Id must be a number." data-val-required="The Id field is required." id="SelfEvaluation_Categories_2__Id" name="SelfEvaluation.Categories[2].Id" type="hidden" value="5" /><input id="SelfEvaluation_Categories_2__Description" name="SelfEvaluation.Categories[2].Description" type="hidden" value="" /><input id="SelfEvaluation_Categories_2__Name" name="SelfEvaluation.Categories[2].Name" type="hidden" value="Grunnleggende konsulentegenskaper" />                        <div class="feedback-category">
+                            <table class="evaluation-form-table">
+                                <thead>
+                                    <tr class="evaluation-form-header">
+                                        <th colspan="3" style="text-align: left;"><h1>Grunnleggende konsulentegenskaper </h1></th>
+                                        <th colspan="5"></th>
+                                    </tr> 
+                                    <tr class="column-header">
+                                        <th>Vekt</th>
+                                        <th style="width: 50%;">Emne</th>
+                                        <th style="width: 50%;">Eksempel/Kommentar</th>
+                                        <th colspan="5">Karakter</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+<input data-val="true" data-val-number="The field Id must be a number." data-val-required="The Id field is required." id="SelfEvaluation_Categories_2__Questions_0__Id" name="SelfEvaluation.Categories[2].Questions[0].Id" type="hidden" value="6" /><input id="SelfEvaluation_Categories_2__Questions_0__Text" name="SelfEvaluation.Categories[2].Questions[0].Text" type="hidden" value="Jobber selvstendig" /><input id="SelfEvaluation_Categories_2__Questions_0__Inspiration" name="SelfEvaluation.Categories[2].Questions[0].Inspiration" type="hidden" value="- Selvdreven
+- Egenmotivert
+- Høyt energinivå
+- Høy gjennomføringsevne
+- Tar ansvar
+- Viser initiativ
+- Gjør ting uoppfordret" /><input data-val="true" data-val-number="The field Weight must be a number." data-val-required="The Weight field is required." id="SelfEvaluation_Categories_2__Questions_0__Weight" name="SelfEvaluation.Categories[2].Questions[0].Weight" type="hidden" value="15" />                                        <tr class="evaluation-category" data-inspiration="- Selvdreven<br />- Egenmotivert<br />- H&#248;yt energiniv&#229;<br />- H&#248;y gjennomf&#248;ringsevne<br />- Tar ansvar<br />- Viser initiativ<br />- Gj&#248;r ting uoppfordret">
+                                            <td align="center">5%</td>
+                                            <td>Jobber selvstendig</td>
+                                            <td><textarea class="auto-expand" cols="20" id="SelfEvaluation_Categories_2__Questions_0__Comments" name="SelfEvaluation.Categories[2].Questions[0].Comments" rows="2" style="width: 98%;">
+</textarea></td>
+                                                <td class="grade-buttons">
+                                                    <input id="One-6" name="SelfEvaluation.Categories[2].Questions[0].Grade" type="radio" value="One" />
+                                                <label for="One-6">1</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input id="Two-6" name="SelfEvaluation.Categories[2].Questions[0].Grade" type="radio" value="Two" />
+                                                <label for="Two-6">2</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input checked="checked" id="Three-6" name="SelfEvaluation.Categories[2].Questions[0].Grade" type="radio" value="Three" />
+                                                <label for="Three-6">3</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input id="Four-6" name="SelfEvaluation.Categories[2].Questions[0].Grade" type="radio" value="Four" />
+                                                <label for="Four-6">4</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input id="Five-6" name="SelfEvaluation.Categories[2].Questions[0].Grade" type="radio" value="Five" />
+                                                <label for="Five-6">5</label>
+                                                </td>
+                                        </tr>
+<input data-val="true" data-val-number="The field Id must be a number." data-val-required="The Id field is required." id="SelfEvaluation_Categories_2__Questions_1__Id" name="SelfEvaluation.Categories[2].Questions[1].Id" type="hidden" value="7" /><input id="SelfEvaluation_Categories_2__Questions_1__Text" name="SelfEvaluation.Categories[2].Questions[1].Text" type="hidden" value="Har høy etisk og moralsk standard" /><input id="SelfEvaluation_Categories_2__Questions_1__Inspiration" name="SelfEvaluation.Categories[2].Questions[1].Inspiration" type="hidden" value="- Profesjonell holdning og adferd
+- Personlig fremtreden
+- Etterlater profesjonelt intrykk av BEKK
+- Er en god rollemodell overfor andre" /><input data-val="true" data-val-number="The field Weight must be a number." data-val-required="The Weight field is required." id="SelfEvaluation_Categories_2__Questions_1__Weight" name="SelfEvaluation.Categories[2].Questions[1].Weight" type="hidden" value="15" />                                        <tr class="evaluation-category" data-inspiration="- Profesjonell holdning og adferd<br />- Personlig fremtreden<br />- Etterlater profesjonelt intrykk av BEKK<br />- Er en god rollemodell overfor andre">
+                                            <td align="center">5%</td>
+                                            <td>Har h&#248;y etisk og moralsk standard</td>
+                                            <td><textarea class="auto-expand" cols="20" id="SelfEvaluation_Categories_2__Questions_1__Comments" name="SelfEvaluation.Categories[2].Questions[1].Comments" rows="2" style="width: 98%;">
+</textarea></td>
+                                                <td class="grade-buttons">
+                                                    <input id="One-7" name="SelfEvaluation.Categories[2].Questions[1].Grade" type="radio" value="One" />
+                                                <label for="One-7">1</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input id="Two-7" name="SelfEvaluation.Categories[2].Questions[1].Grade" type="radio" value="Two" />
+                                                <label for="Two-7">2</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input checked="checked" id="Three-7" name="SelfEvaluation.Categories[2].Questions[1].Grade" type="radio" value="Three" />
+                                                <label for="Three-7">3</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input id="Four-7" name="SelfEvaluation.Categories[2].Questions[1].Grade" type="radio" value="Four" />
+                                                <label for="Four-7">4</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input id="Five-7" name="SelfEvaluation.Categories[2].Questions[1].Grade" type="radio" value="Five" />
+                                                <label for="Five-7">5</label>
+                                                </td>
+                                        </tr>
+<input data-val="true" data-val-number="The field Id must be a number." data-val-required="The Id field is required." id="SelfEvaluation_Categories_2__Questions_2__Id" name="SelfEvaluation.Categories[2].Questions[2].Id" type="hidden" value="8" /><input id="SelfEvaluation_Categories_2__Questions_2__Text" name="SelfEvaluation.Categories[2].Questions[2].Text" type="hidden" value="Er fleksibel" /><input id="SelfEvaluation_Categories_2__Questions_2__Inspiration" name="SelfEvaluation.Categories[2].Questions[2].Inspiration" type="hidden" value="- I forhold til arbeidsmengde
+- I forhold til arbeidsoppgaver
+- Også kjedelige og rutinepregede oppgaver" /><input data-val="true" data-val-number="The field Weight must be a number." data-val-required="The Weight field is required." id="SelfEvaluation_Categories_2__Questions_2__Weight" name="SelfEvaluation.Categories[2].Questions[2].Weight" type="hidden" value="15" />                                        <tr class="evaluation-category" data-inspiration="- I forhold til arbeidsmengde<br />- I forhold til arbeidsoppgaver<br />- Ogs&#229; kjedelige og rutinepregede oppgaver">
+                                            <td align="center">5%</td>
+                                            <td>Er fleksibel</td>
+                                            <td><textarea class="auto-expand" cols="20" id="SelfEvaluation_Categories_2__Questions_2__Comments" name="SelfEvaluation.Categories[2].Questions[2].Comments" rows="2" style="width: 98%;">
+</textarea></td>
+                                                <td class="grade-buttons">
+                                                    <input id="One-8" name="SelfEvaluation.Categories[2].Questions[2].Grade" type="radio" value="One" />
+                                                <label for="One-8">1</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input id="Two-8" name="SelfEvaluation.Categories[2].Questions[2].Grade" type="radio" value="Two" />
+                                                <label for="Two-8">2</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input checked="checked" id="Three-8" name="SelfEvaluation.Categories[2].Questions[2].Grade" type="radio" value="Three" />
+                                                <label for="Three-8">3</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input id="Four-8" name="SelfEvaluation.Categories[2].Questions[2].Grade" type="radio" value="Four" />
+                                                <label for="Four-8">4</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input id="Five-8" name="SelfEvaluation.Categories[2].Questions[2].Grade" type="radio" value="Five" />
+                                                <label for="Five-8">5</label>
+                                                </td>
+                                        </tr>
+<input data-val="true" data-val-number="The field Id must be a number." data-val-required="The Id field is required." id="SelfEvaluation_Categories_2__Questions_3__Id" name="SelfEvaluation.Categories[2].Questions[3].Id" type="hidden" value="22" /><input id="SelfEvaluation_Categories_2__Questions_3__Text" name="SelfEvaluation.Categories[2].Questions[3].Text" type="hidden" value="Utviser høy grad av serviceinnstilling" /><input id="SelfEvaluation_Categories_2__Questions_3__Inspiration" name="SelfEvaluation.Categories[2].Questions[3].Inspiration" type="hidden" value="- Overfor kunde og kolleger
+- Har tillit hos kunde og kolleger
+- Har en distansert nærhet til kunde
+- Glemmer ikke at man er konsulent
+- Unngår politiske konflikter hos kunde
+- Har lojalitet til BEKK og kolleger" /><input data-val="true" data-val-number="The field Weight must be a number." data-val-required="The Weight field is required." id="SelfEvaluation_Categories_2__Questions_3__Weight" name="SelfEvaluation.Categories[2].Questions[3].Weight" type="hidden" value="15" />                                        <tr class="evaluation-category" data-inspiration="- Overfor kunde og kolleger<br />- Har tillit hos kunde og kolleger<br />- Har en distansert n&#230;rhet til kunde<br />- Glemmer ikke at man er konsulent<br />- Unng&#229;r politiske konflikter hos kunde<br />- Har lojalitet til BEKK og kolleger">
+                                            <td align="center">5%</td>
+                                            <td>Utviser h&#248;y grad av serviceinnstilling</td>
+                                            <td><textarea class="auto-expand" cols="20" id="SelfEvaluation_Categories_2__Questions_3__Comments" name="SelfEvaluation.Categories[2].Questions[3].Comments" rows="2" style="width: 98%;">
+</textarea></td>
+                                                <td class="grade-buttons">
+                                                    <input id="One-22" name="SelfEvaluation.Categories[2].Questions[3].Grade" type="radio" value="One" />
+                                                <label for="One-22">1</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input id="Two-22" name="SelfEvaluation.Categories[2].Questions[3].Grade" type="radio" value="Two" />
+                                                <label for="Two-22">2</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input checked="checked" id="Three-22" name="SelfEvaluation.Categories[2].Questions[3].Grade" type="radio" value="Three" />
+                                                <label for="Three-22">3</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input id="Four-22" name="SelfEvaluation.Categories[2].Questions[3].Grade" type="radio" value="Four" />
+                                                <label for="Four-22">4</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input id="Five-22" name="SelfEvaluation.Categories[2].Questions[3].Grade" type="radio" value="Five" />
+                                                <label for="Five-22">5</label>
+                                                </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </div>
+<input data-val="true" data-val-number="The field Id must be a number." data-val-required="The Id field is required." id="SelfEvaluation_Categories_3__Id" name="SelfEvaluation.Categories[3].Id" type="hidden" value="6" /><input id="SelfEvaluation_Categories_3__Description" name="SelfEvaluation.Categories[3].Description" type="hidden" value="" /><input id="SelfEvaluation_Categories_3__Name" name="SelfEvaluation.Categories[3].Name" type="hidden" value="Entreprenørevner og kommersialitet" />                        <div class="feedback-category">
+                            <table class="evaluation-form-table">
+                                <thead>
+                                    <tr class="evaluation-form-header">
+                                        <th colspan="3" style="text-align: left;"><h1>Entrepren&#248;revner og kommersialitet </h1></th>
+                                        <th colspan="5"></th>
+                                    </tr> 
+                                    <tr class="column-header">
+                                        <th>Vekt</th>
+                                        <th style="width: 50%;">Emne</th>
+                                        <th style="width: 50%;">Eksempel/Kommentar</th>
+                                        <th colspan="5">Karakter</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+<input data-val="true" data-val-number="The field Id must be a number." data-val-required="The Id field is required." id="SelfEvaluation_Categories_3__Questions_0__Id" name="SelfEvaluation.Categories[3].Questions[0].Id" type="hidden" value="10" /><input id="SelfEvaluation_Categories_3__Questions_0__Text" name="SelfEvaluation.Categories[3].Questions[0].Text" type="hidden" value="Bidrar i driften av BEKK" /><input id="SelfEvaluation_Categories_3__Questions_0__Inspiration" name="SelfEvaluation.Categories[3].Questions[0].Inspiration" type="hidden" value="- Nettverksrekruttering
+- Skolerekruttering
+- Internprosjekter
+- Adminoppgaver
+- Spirit
+- AMU
+- Annet" /><input data-val="true" data-val-number="The field Weight must be a number." data-val-required="The Weight field is required." id="SelfEvaluation_Categories_3__Questions_0__Weight" name="SelfEvaluation.Categories[3].Questions[0].Weight" type="hidden" value="20" />                                        <tr class="evaluation-category" data-inspiration="- Nettverksrekruttering<br />- Skolerekruttering<br />- Internprosjekter<br />- Adminoppgaver<br />- Spirit<br />- AMU<br />- Annet">
+                                            <td align="center">6,7%</td>
+                                            <td>Bidrar i driften av BEKK</td>
+                                            <td><textarea class="auto-expand" cols="20" id="SelfEvaluation_Categories_3__Questions_0__Comments" name="SelfEvaluation.Categories[3].Questions[0].Comments" rows="2" style="width: 98%;">
+</textarea></td>
+                                                <td class="grade-buttons">
+                                                    <input id="One-10" name="SelfEvaluation.Categories[3].Questions[0].Grade" type="radio" value="One" />
+                                                <label for="One-10">1</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input id="Two-10" name="SelfEvaluation.Categories[3].Questions[0].Grade" type="radio" value="Two" />
+                                                <label for="Two-10">2</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input checked="checked" id="Three-10" name="SelfEvaluation.Categories[3].Questions[0].Grade" type="radio" value="Three" />
+                                                <label for="Three-10">3</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input id="Four-10" name="SelfEvaluation.Categories[3].Questions[0].Grade" type="radio" value="Four" />
+                                                <label for="Four-10">4</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input id="Five-10" name="SelfEvaluation.Categories[3].Questions[0].Grade" type="radio" value="Five" />
+                                                <label for="Five-10">5</label>
+                                                </td>
+                                        </tr>
+<input data-val="true" data-val-number="The field Id must be a number." data-val-required="The Id field is required." id="SelfEvaluation_Categories_3__Questions_1__Id" name="SelfEvaluation.Categories[3].Questions[1].Id" type="hidden" value="11" /><input id="SelfEvaluation_Categories_3__Questions_1__Text" name="SelfEvaluation.Categories[3].Questions[1].Text" type="hidden" value="Overholder budsjetter og estimater" /><input id="SelfEvaluation_Categories_3__Questions_1__Inspiration" name="SelfEvaluation.Categories[3].Questions[1].Inspiration" type="hidden" value="- Er kjent med prosjektets budsjetter og estimater
+- Anstrenger seg for å overholde disse" /><input data-val="true" data-val-number="The field Weight must be a number." data-val-required="The Weight field is required." id="SelfEvaluation_Categories_3__Questions_1__Weight" name="SelfEvaluation.Categories[3].Questions[1].Weight" type="hidden" value="20" />                                        <tr class="evaluation-category" data-inspiration="- Er kjent med prosjektets budsjetter og estimater<br />- Anstrenger seg for &#229; overholde disse">
+                                            <td align="center">6,7%</td>
+                                            <td>Overholder budsjetter og estimater</td>
+                                            <td><textarea class="auto-expand" cols="20" id="SelfEvaluation_Categories_3__Questions_1__Comments" name="SelfEvaluation.Categories[3].Questions[1].Comments" rows="2" style="width: 98%;">
+</textarea></td>
+                                                <td class="grade-buttons">
+                                                    <input id="One-11" name="SelfEvaluation.Categories[3].Questions[1].Grade" type="radio" value="One" />
+                                                <label for="One-11">1</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input id="Two-11" name="SelfEvaluation.Categories[3].Questions[1].Grade" type="radio" value="Two" />
+                                                <label for="Two-11">2</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input checked="checked" id="Three-11" name="SelfEvaluation.Categories[3].Questions[1].Grade" type="radio" value="Three" />
+                                                <label for="Three-11">3</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input id="Four-11" name="SelfEvaluation.Categories[3].Questions[1].Grade" type="radio" value="Four" />
+                                                <label for="Four-11">4</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input id="Five-11" name="SelfEvaluation.Categories[3].Questions[1].Grade" type="radio" value="Five" />
+                                                <label for="Five-11">5</label>
+                                                </td>
+                                        </tr>
+<input data-val="true" data-val-number="The field Id must be a number." data-val-required="The Id field is required." id="SelfEvaluation_Categories_3__Questions_2__Id" name="SelfEvaluation.Categories[3].Questions[2].Id" type="hidden" value="12" /><input id="SelfEvaluation_Categories_3__Questions_2__Text" name="SelfEvaluation.Categories[3].Questions[2].Text" type="hidden" value="Følger interne og eksterne rutiner" /><input id="SelfEvaluation_Categories_3__Questions_2__Inspiration" name="SelfEvaluation.Categories[3].Questions[2].Inspiration" type="hidden" value="- Status i prosjekt
+- Timekeeper
+- Fravær
+- Kompetansebygging
+- Bruk av ledig tid
+- Utgiftsrapport
+- Overtidsliste" /><input data-val="true" data-val-number="The field Weight must be a number." data-val-required="The Weight field is required." id="SelfEvaluation_Categories_3__Questions_2__Weight" name="SelfEvaluation.Categories[3].Questions[2].Weight" type="hidden" value="20" />                                        <tr class="evaluation-category" data-inspiration="- Status i prosjekt<br />- Timekeeper<br />- Frav&#230;r<br />- Kompetansebygging<br />- Bruk av ledig tid<br />- Utgiftsrapport<br />- Overtidsliste">
+                                            <td align="center">6,7%</td>
+                                            <td>F&#248;lger interne og eksterne rutiner</td>
+                                            <td><textarea class="auto-expand" cols="20" id="SelfEvaluation_Categories_3__Questions_2__Comments" name="SelfEvaluation.Categories[3].Questions[2].Comments" rows="2" style="width: 98%;">
+</textarea></td>
+                                                <td class="grade-buttons">
+                                                    <input id="One-12" name="SelfEvaluation.Categories[3].Questions[2].Grade" type="radio" value="One" />
+                                                <label for="One-12">1</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input id="Two-12" name="SelfEvaluation.Categories[3].Questions[2].Grade" type="radio" value="Two" />
+                                                <label for="Two-12">2</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input checked="checked" id="Three-12" name="SelfEvaluation.Categories[3].Questions[2].Grade" type="radio" value="Three" />
+                                                <label for="Three-12">3</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input id="Four-12" name="SelfEvaluation.Categories[3].Questions[2].Grade" type="radio" value="Four" />
+                                                <label for="Four-12">4</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input id="Five-12" name="SelfEvaluation.Categories[3].Questions[2].Grade" type="radio" value="Five" />
+                                                <label for="Five-12">5</label>
+                                                </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </div>
+<input data-val="true" data-val-number="The field Id must be a number." data-val-required="The Id field is required." id="SelfEvaluation_Categories_4__Id" name="SelfEvaluation.Categories[4].Id" type="hidden" value="7" /><input id="SelfEvaluation_Categories_4__Description" name="SelfEvaluation.Categories[4].Description" type="hidden" value="" /><input id="SelfEvaluation_Categories_4__Name" name="SelfEvaluation.Categories[4].Name" type="hidden" value="Faglige kvalifikasjoner og faglig utvikling" />                        <div class="feedback-category">
+                            <table class="evaluation-form-table">
+                                <thead>
+                                    <tr class="evaluation-form-header">
+                                        <th colspan="3" style="text-align: left;"><h1>Faglige kvalifikasjoner og faglig utvikling </h1></th>
+                                        <th colspan="5"></th>
+                                    </tr> 
+                                    <tr class="column-header">
+                                        <th>Vekt</th>
+                                        <th style="width: 50%;">Emne</th>
+                                        <th style="width: 50%;">Eksempel/Kommentar</th>
+                                        <th colspan="5">Karakter</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+<input data-val="true" data-val-number="The field Id must be a number." data-val-required="The Id field is required." id="SelfEvaluation_Categories_4__Questions_0__Id" name="SelfEvaluation.Categories[4].Questions[0].Id" type="hidden" value="13" /><input id="SelfEvaluation_Categories_4__Questions_0__Text" name="SelfEvaluation.Categories[4].Questions[0].Text" type="hidden" value="Har riktig kompetanseprofil" /><input id="SelfEvaluation_Categories_4__Questions_0__Inspiration" name="SelfEvaluation.Categories[4].Questions[0].Inspiration" type="hidden" value="- I henhold til erfaring og senioritet
+- Relevante sertifiseringer" /><input data-val="true" data-val-number="The field Weight must be a number." data-val-required="The Weight field is required." id="SelfEvaluation_Categories_4__Questions_0__Weight" name="SelfEvaluation.Categories[4].Questions[0].Weight" type="hidden" value="12" />                                        <tr class="evaluation-category" data-inspiration="- I henhold til erfaring og senioritet<br />- Relevante sertifiseringer">
+                                            <td align="center">4%</td>
+                                            <td>Har riktig kompetanseprofil</td>
+                                            <td><textarea class="auto-expand" cols="20" id="SelfEvaluation_Categories_4__Questions_0__Comments" name="SelfEvaluation.Categories[4].Questions[0].Comments" rows="2" style="width: 98%;">
+</textarea></td>
+                                                <td class="grade-buttons">
+                                                    <input id="One-13" name="SelfEvaluation.Categories[4].Questions[0].Grade" type="radio" value="One" />
+                                                <label for="One-13">1</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input id="Two-13" name="SelfEvaluation.Categories[4].Questions[0].Grade" type="radio" value="Two" />
+                                                <label for="Two-13">2</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input checked="checked" id="Three-13" name="SelfEvaluation.Categories[4].Questions[0].Grade" type="radio" value="Three" />
+                                                <label for="Three-13">3</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input id="Four-13" name="SelfEvaluation.Categories[4].Questions[0].Grade" type="radio" value="Four" />
+                                                <label for="Four-13">4</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input id="Five-13" name="SelfEvaluation.Categories[4].Questions[0].Grade" type="radio" value="Five" />
+                                                <label for="Five-13">5</label>
+                                                </td>
+                                        </tr>
+<input data-val="true" data-val-number="The field Id must be a number." data-val-required="The Id field is required." id="SelfEvaluation_Categories_4__Questions_1__Id" name="SelfEvaluation.Categories[4].Questions[1].Id" type="hidden" value="14" /><input id="SelfEvaluation_Categories_4__Questions_1__Text" name="SelfEvaluation.Categories[4].Questions[1].Text" type="hidden" value="Arbeider metodisk og strukturert" /><input id="SelfEvaluation_Categories_4__Questions_1__Inspiration" name="SelfEvaluation.Categories[4].Questions[1].Inspiration" type="hidden" value="- Bruker relevant metode og verktøy
+- Har gode arbeidsvaner" /><input data-val="true" data-val-number="The field Weight must be a number." data-val-required="The Weight field is required." id="SelfEvaluation_Categories_4__Questions_1__Weight" name="SelfEvaluation.Categories[4].Questions[1].Weight" type="hidden" value="12" />                                        <tr class="evaluation-category" data-inspiration="- Bruker relevant metode og verkt&#248;y<br />- Har gode arbeidsvaner">
+                                            <td align="center">4%</td>
+                                            <td>Arbeider metodisk og strukturert</td>
+                                            <td><textarea class="auto-expand" cols="20" id="SelfEvaluation_Categories_4__Questions_1__Comments" name="SelfEvaluation.Categories[4].Questions[1].Comments" rows="2" style="width: 98%;">
+</textarea></td>
+                                                <td class="grade-buttons">
+                                                    <input id="One-14" name="SelfEvaluation.Categories[4].Questions[1].Grade" type="radio" value="One" />
+                                                <label for="One-14">1</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input id="Two-14" name="SelfEvaluation.Categories[4].Questions[1].Grade" type="radio" value="Two" />
+                                                <label for="Two-14">2</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input checked="checked" id="Three-14" name="SelfEvaluation.Categories[4].Questions[1].Grade" type="radio" value="Three" />
+                                                <label for="Three-14">3</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input id="Four-14" name="SelfEvaluation.Categories[4].Questions[1].Grade" type="radio" value="Four" />
+                                                <label for="Four-14">4</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input id="Five-14" name="SelfEvaluation.Categories[4].Questions[1].Grade" type="radio" value="Five" />
+                                                <label for="Five-14">5</label>
+                                                </td>
+                                        </tr>
+<input data-val="true" data-val-number="The field Id must be a number." data-val-required="The Id field is required." id="SelfEvaluation_Categories_4__Questions_2__Id" name="SelfEvaluation.Categories[4].Questions[2].Id" type="hidden" value="15" /><input id="SelfEvaluation_Categories_4__Questions_2__Text" name="SelfEvaluation.Categories[4].Questions[2].Text" type="hidden" value="Leverer faglig kvalitet" /><input id="SelfEvaluation_Categories_4__Questions_2__Inspiration" name="SelfEvaluation.Categories[4].Questions[2].Inspiration" type="hidden" value="- Arbeid og leveranse av høy faglig kvalitet" /><input data-val="true" data-val-number="The field Weight must be a number." data-val-required="The Weight field is required." id="SelfEvaluation_Categories_4__Questions_2__Weight" name="SelfEvaluation.Categories[4].Questions[2].Weight" type="hidden" value="12" />                                        <tr class="evaluation-category" data-inspiration="- Arbeid og leveranse av h&#248;y faglig kvalitet">
+                                            <td align="center">4%</td>
+                                            <td>Leverer faglig kvalitet</td>
+                                            <td><textarea class="auto-expand" cols="20" id="SelfEvaluation_Categories_4__Questions_2__Comments" name="SelfEvaluation.Categories[4].Questions[2].Comments" rows="2" style="width: 98%;">
+</textarea></td>
+                                                <td class="grade-buttons">
+                                                    <input id="One-15" name="SelfEvaluation.Categories[4].Questions[2].Grade" type="radio" value="One" />
+                                                <label for="One-15">1</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input id="Two-15" name="SelfEvaluation.Categories[4].Questions[2].Grade" type="radio" value="Two" />
+                                                <label for="Two-15">2</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input checked="checked" id="Three-15" name="SelfEvaluation.Categories[4].Questions[2].Grade" type="radio" value="Three" />
+                                                <label for="Three-15">3</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input id="Four-15" name="SelfEvaluation.Categories[4].Questions[2].Grade" type="radio" value="Four" />
+                                                <label for="Four-15">4</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input id="Five-15" name="SelfEvaluation.Categories[4].Questions[2].Grade" type="radio" value="Five" />
+                                                <label for="Five-15">5</label>
+                                                </td>
+                                        </tr>
+<input data-val="true" data-val-number="The field Id must be a number." data-val-required="The Id field is required." id="SelfEvaluation_Categories_4__Questions_3__Id" name="SelfEvaluation.Categories[4].Questions[3].Id" type="hidden" value="16" /><input id="SelfEvaluation_Categories_4__Questions_3__Text" name="SelfEvaluation.Categories[4].Questions[3].Text" type="hidden" value="Deltar i internt fagarbeid" /><input id="SelfEvaluation_Categories_4__Questions_3__Inspiration" name="SelfEvaluation.Categories[4].Questions[3].Inspiration" type="hidden" value="- Egen faggruppe
+- Forum
+- Fagdag
+- Andre initiativer eller grupper" /><input data-val="true" data-val-number="The field Weight must be a number." data-val-required="The Weight field is required." id="SelfEvaluation_Categories_4__Questions_3__Weight" name="SelfEvaluation.Categories[4].Questions[3].Weight" type="hidden" value="12" />                                        <tr class="evaluation-category" data-inspiration="- Egen faggruppe<br />- Forum<br />- Fagdag<br />- Andre initiativer eller grupper">
+                                            <td align="center">4%</td>
+                                            <td>Deltar i internt fagarbeid</td>
+                                            <td><textarea class="auto-expand" cols="20" id="SelfEvaluation_Categories_4__Questions_3__Comments" name="SelfEvaluation.Categories[4].Questions[3].Comments" rows="2" style="width: 98%;">
+</textarea></td>
+                                                <td class="grade-buttons">
+                                                    <input id="One-16" name="SelfEvaluation.Categories[4].Questions[3].Grade" type="radio" value="One" />
+                                                <label for="One-16">1</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input id="Two-16" name="SelfEvaluation.Categories[4].Questions[3].Grade" type="radio" value="Two" />
+                                                <label for="Two-16">2</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input checked="checked" id="Three-16" name="SelfEvaluation.Categories[4].Questions[3].Grade" type="radio" value="Three" />
+                                                <label for="Three-16">3</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input id="Four-16" name="SelfEvaluation.Categories[4].Questions[3].Grade" type="radio" value="Four" />
+                                                <label for="Four-16">4</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input id="Five-16" name="SelfEvaluation.Categories[4].Questions[3].Grade" type="radio" value="Five" />
+                                                <label for="Five-16">5</label>
+                                                </td>
+                                        </tr>
+<input data-val="true" data-val-number="The field Id must be a number." data-val-required="The Id field is required." id="SelfEvaluation_Categories_4__Questions_4__Id" name="SelfEvaluation.Categories[4].Questions[4].Id" type="hidden" value="17" /><input id="SelfEvaluation_Categories_4__Questions_4__Text" name="SelfEvaluation.Categories[4].Questions[4].Text" type="hidden" value="Tar ansvar for egen kompetansebygging" /><input id="SelfEvaluation_Categories_4__Questions_4__Inspiration" name="SelfEvaluation.Categories[4].Questions[4].Inspiration" type="hidden" value="- Har en godt utarbeidet plan
+- Følger gjeldende plan
+- Har god faglig progresjon" /><input data-val="true" data-val-number="The field Weight must be a number." data-val-required="The Weight field is required." id="SelfEvaluation_Categories_4__Questions_4__Weight" name="SelfEvaluation.Categories[4].Questions[4].Weight" type="hidden" value="12" />                                        <tr class="evaluation-category" data-inspiration="- Har en godt utarbeidet plan<br />- F&#248;lger gjeldende plan<br />- Har god faglig progresjon">
+                                            <td align="center">4%</td>
+                                            <td>Tar ansvar for egen kompetansebygging</td>
+                                            <td><textarea class="auto-expand" cols="20" id="SelfEvaluation_Categories_4__Questions_4__Comments" name="SelfEvaluation.Categories[4].Questions[4].Comments" rows="2" style="width: 98%;">
+</textarea></td>
+                                                <td class="grade-buttons">
+                                                    <input id="One-17" name="SelfEvaluation.Categories[4].Questions[4].Grade" type="radio" value="One" />
+                                                <label for="One-17">1</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input id="Two-17" name="SelfEvaluation.Categories[4].Questions[4].Grade" type="radio" value="Two" />
+                                                <label for="Two-17">2</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input checked="checked" id="Three-17" name="SelfEvaluation.Categories[4].Questions[4].Grade" type="radio" value="Three" />
+                                                <label for="Three-17">3</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input id="Four-17" name="SelfEvaluation.Categories[4].Questions[4].Grade" type="radio" value="Four" />
+                                                <label for="Four-17">4</label>
+                                                </td>
+                                                <td class="grade-buttons">
+                                                    <input id="Five-17" name="SelfEvaluation.Categories[4].Questions[4].Grade" type="radio" value="Five" />
+                                                <label for="Five-17">5</label>
+                                                </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                </fieldset>
+                <span class="last-save" style="font-style: italic"></span>
+</form>        </div>
+        <div style="position:relative; float:left; width: 25%">
+            <div class="inspiration-box" style="visibility: hidden; position: absolute;">
+                <div class="dashboard-element-header">
+                    <h1>Stikkord</h1>
+                </div>
+                <div class="dashboard-element-body">
+                    <div id="inspiration-element" class="inline-block">
+                    </div>
+                </div>
+            </div>
+
+            <div class="inspiration-box-arrow" style="visibility: hidden; position: absolute;">
+                <div style="background-image: url('/evaluering/content/images/arrow.png');width:14px; height: 27px;margin-left: -14px; margin-top:6px;float:left;"/>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

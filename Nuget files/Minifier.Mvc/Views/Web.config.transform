@@ -1,0 +1,6 @@
+﻿<?xmlversion = "1.0"?>
+<configuration>
+  <system.web.webPages.razor>
+    <host factoryType="Lervik.Minifier.Mvc.MinifyHtmlWebRazorHostFactory" />
+  </system.web.webPages.razor>
+</configuration>

@@ -1,0 +1,11 @@
+﻿<?xmlversion = "1.0"?>
+<configuration>
+  <appSettings>
+    <add key="HtmlMinificationEnabled" value="true" />
+  </appSettings>
+  <system.webServer>
+    <handlers>
+      <add verb="*" path="*.min.js" name="MinifyJsHandler" type="Lervik.Minifier.Core.MinifyJsHandler" />
+    </handlers>
+  </system.webServer>
+</configuration>

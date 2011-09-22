@@ -1,0 +1,63 @@
+
+<!DOCTYPE html><html><head><meta http-equiv=X-UA-Compatible content="IE=edge"/><meta charset=utf-8 /><meta name=description content="The homepage of Tore Lervik"/><meta name=author content="Tore Lervik"/><meta property=og:image content=""/><title>Edit Article</title><link href="/Content/css?v=-6023345350336831924" rel=stylesheet type="text/css"/><link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'><script src="/Scripts/js?v=396753006874032745" type="text/javascript"></script></head><body><div class=sticky-wrapper><div class=header-container><header class=container><a href="/"><h1>Tore Lervik</h1></a><nav class=header-menu><a href="/">Home</a><a href="/Article/about">About</a> <a href="/Admin">Admin</a> </nav></header></div><div class="frame-content"><div class="frame-content-background"></div><div class="frame-content-topborder"></div><div class="frame-content-bottomborder"></div><div class="frame-content-main container"><h1 style="padding: 25px 0;">Edit Article</h1></div></div><div class="frame-main"><div class="container"><div class="one"><form action="/Admin/Article/Edit/22" method="post"> <fieldset><div class="editor-label"><label for="Title">Title</label></div><div class="editor-field"><input class="fancy-text" data-val="true" data-val-required="The Title field is required." id="Title" name="Title" style="width: 400px;" type="text" value="Minifier.Mvc" /><span class="field-validation-valid" data-valmsg-for="Title" data-valmsg-replace="true"></span></div><div class="editor-label"><label for="Url">Url</label></div><div class="editor-field"><input class="fancy-text" data-val="true" data-val-required="The Url field is required." id="Url" name="Url" style="width: 400px;" type="text" value="Minifier_Mvc" /><span class="field-validation-valid" data-valmsg-for="Url" data-valmsg-replace="true"></span></div><div class="editor-label"><label for="ImageUrl">ImageUrl</label></div><div class="editor-field"><input class="fancy-text" id="ImageUrl" name="ImageUrl" style="width: 400px;" type="text" value="" /><span class="field-validation-valid" data-valmsg-for="ImageUrl" data-valmsg-replace="true"></span></div><div class="editor-label"><label for="Date">Date</label></div><div class="editor-field"><input class="fancy-text" data-val="true" data-val-required="The Date field is required." id="Date" name="Date" style="width: 200px;" type="text" value="19.09.2011 00:00:00" /><span class="field-validation-valid" data-valmsg-for="Date" data-valmsg-replace="true"></span></div><div class="editor-label"><label for="Type">Type</label></div><div class="editor-field"><select class="fancy-text" data-val="true" data-val-required="The Type field is required." id="Type" name="Type" style="width: 214px;"><option selected="selected" value="WithComments">WithComments</option><option value="WithFrontpageSidebar">WithFrontpageSidebar</option><option value="WithoutSidebar">WithoutSidebar</option></select><span class="field-validation-valid" data-valmsg-for="Type" data-valmsg-replace="true"></span></div><div class="editor-label"><label for="Description">Description</label></div><div class="editor-field"><textarea class="fancy-text" cols="20" id="Description" name="Description" rows="2" style="width: 830px; height: 100px;">
+Minifier.Mvc is a small library for minifying html in ASP.NET Mvc applications. The package allows for compression while maintaining speed.</textarea><span class="field-validation-valid" data-valmsg-for="Description" data-valmsg-replace="true"></span></div><div class="editor-label"><label for="Content">Content</label></div><div class="editor-field"><script src="/Scripts/tinymce.3.4.4/jquery.tinymce.js" type="text/javascript"></script><script type="text/javascript">
+
+    (function(){ 
+
+      $(function() { 
+      
+          $('#Content').tinymce({
+
+            // Location of TinyMCE script
+            script_url: '/Scripts/tinymce.3.4.4/tiny_mce.js',
+            theme: "advanced",
+            
+            height: "500",
+            width: "845",
+            verify_html : false,
+            plugins : "pagebreak,style,table,advhr,advimage,advlink,emotions,inlinepopups,preview,media,searchreplace,contextmenu,paste,directionality,fullscreen,visualchars,nonbreaking,template,wordcount,advlist,autosave",
+            
+            // Theme options
+            theme_advanced_buttons1 : "bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,styleselect,formatselect,|,code,fullscreen",
+            theme_advanced_buttons2 : "cut,copy,paste,pastetext,|,bullist,numlist,|,outdent,indent,blockquote,|,undo,redo,|,link,unlink,anchor,image,cleanup,|,forecolor,backcolor",
+            theme_advanced_buttons3 : "",
+            theme_advanced_buttons4 : "",
+            theme_advanced_toolbar_location : "top",
+            theme_advanced_toolbar_align : "left",
+            theme_advanced_statusbar_location : "bottom",
+            theme_advanced_resizing : false,
+            
+            // Example content CSS (should be your site CSS)
+            content_css: "/Content/css?v=-6023345350336831924",
+            convert_urls: false, 
+            // Drop lists for link/image/media/template dialogs
+            template_external_list_url: "lists/template_list.js",
+            external_link_list_url: "lists/link_list.js",
+            external_image_list_url: "lists/image_list.js", 
+            media_external_list_url: "lists/media_list.js"
+        });
+    });
+})();</script><textarea Length="3715" cols="20" data-val="true" data-val-required="The Content field is required." id="Content" name="Content" rows="2">
+&lt;p&gt;Optimization&amp;nbsp;in regards to the web&amp;nbsp;can be done in many ways, and I have talked about some of the options earlier in my &lt;a href=&quot;/Article/optimizing_without_drawbacks&quot;&gt;Optimizing without drawbacks&lt;/a&gt; article.&amp;nbsp;&lt;/p&gt;
+&lt;h2&gt;The challenge&lt;/h2&gt;
+&lt;p&gt;Optimizing and minifying html is a challenge because the syntax allows for alot of variation and different meanings. While css and javascript have strict rules, the rules of html are somewhat more diffuse.&amp;nbsp;&lt;/p&gt;
+&lt;pre class=&quot;code&quot;&gt;// Remember to not minify content within textarea or pre tags&lt;br /&gt;&amp;lt;textarea&amp;gt;content with some\r\nline breaks and\r\n    more content&amp;lt;/textarea&amp;gt;&lt;br /&gt;&lt;br /&gt;// This is fine&lt;br /&gt;&amp;lt;div&amp;gt;content&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt;other&amp;lt;/div&amp;gt; -&amp;gt;&amp;nbsp;&amp;lt;div&amp;gt;content&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;other&amp;lt;/div&amp;gt;&lt;br /&gt;// This is not&lt;br /&gt;&amp;lt;button value=&quot;Cancel&quot;/&amp;gt; &amp;lt;/button value=&quot;Send&quot;/&amp;gt; -&amp;gt; &amp;lt;button value=&quot;Cancel&quot;/&amp;gt;&amp;lt;/button value=&quot;Send&quot;/&amp;gt;&lt;/pre&gt;
+&lt;h2&gt;The methods&lt;/h2&gt;
+&lt;p&gt;The library contains two methods, a complete and a quick minifier. The reason for this is that Mvc3 renders static parts of the view at first use, but there are still some optimizations that can be done when you have the complete html.&lt;/p&gt;
+&lt;h3&gt;Complete()&lt;/h3&gt;
+&lt;p&gt;Runs matches trying to remove as much of the usual whitespace in ASP.NET applications as possible. The method is designed to work with chunks of html that the razor view engine outputs.&lt;/p&gt;
+&lt;h4&gt;Examples of input -&amp;gt; output&lt;/h4&gt;
+&lt;pre class=&quot;code&quot;&gt;// This should not be minified since we have no way of knowing what type of tag it&#39;s inside&lt;br /&gt;&quot;\r\n some content\r\n   &quot; -&amp;gt; &amp;nbsp;&quot;\r\n some content\r\n   &quot;&lt;br /&gt;&quot;\r\n&quot; -&amp;gt; &quot;\r\n&quot;&lt;br /&gt;&lt;br /&gt;// This we can safely minify&lt;br /&gt;&quot;&amp;lt;div&amp;gt;content&amp;lt;/div&amp;gt;\r\n      &amp;lt;div&amp;gt;more&amp;lt;/div&amp;gt;&quot; -&amp;gt;&amp;nbsp;&quot;&amp;lt;div&amp;gt;content&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;more&amp;lt;/div&amp;gt;&quot;&lt;/pre&gt;
+&lt;p&gt;When ASP.NET render a view in Mvc3, the first thing it does is to compile the chunks of static html between the dynamic razor tags. This result in the method only beeing called once per view while the result persist for every request. This is also the reason why this method is allowed to use more time.&lt;/p&gt;
+&lt;h3&gt;Quick()&lt;/h3&gt;
+&lt;p&gt;This method runs a small set of quick matches trying to remove the whitespace that is left after ASP.NET rendered the complete html. This method runs on each request so it needs to be fast, and so it doesn&#39;t contain more than a couple methods.&lt;/p&gt;
+&lt;h2&gt;Usage&lt;/h2&gt;
+&lt;p&gt;Add a reference to &lt;a href=&quot;http://nuget.org/List/Packages/Minifier.Mvc&quot;&gt;Minifier.Mvc&lt;/a&gt; from your NuGet package manager.&lt;/p&gt;
+&lt;p&gt;After installing you get two things&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The first is a reference to the quick method in your &lt;em&gt;App_Code/AppStart_Minifier.cs&lt;/em&gt; file, this registers the quick method to run on each request.&lt;/li&gt;
+&lt;li&gt;The second is a new line in Views/Web.config called &lt;em&gt;&amp;lt;host factoryType=&quot;Lervik.Minifier.Mvc.MinifyHtmlWebRazorHostFactory&quot; /&amp;gt;&lt;/em&gt;, this one registers the complete method to run when razor is compiling static html.&lt;br /&gt;&lt;strong&gt;Note:&lt;/strong&gt; It&#39;s important that you comment out the old &amp;lt;host factorytype=&quot;&quot;/&amp;gt; value, or the application will throw an exception.&amp;nbsp;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Summary&lt;/h2&gt;
+&lt;p&gt;I have designed this package to work on the usual whitespaces created when building ASP.NET applications. The idea is for it to be lightweight and fast, while still removing as much as possible. If you look at the source of this page you will find that it uses the package to compress the html while the response time still rocks! :)&lt;/p&gt;
+&lt;p&gt;I hope that you find use for the package, and let me know if you find any html issues that it isn&#39;t handling. :)&lt;/p&gt;</textarea><span class="field-validation-valid" data-valmsg-for="Content" data-valmsg-replace="true"></span></div><div class="editor-label"><label for="Published">Published</label></div><div class="editor-field"><input checked="checked" class="check-box" data-val="true" data-val-required="The Published field is required." id="Published" name="Published" type="checkbox" value="true" /><input name="Published" type="hidden" value="false" /><span class="field-validation-valid" data-valmsg-for="Published" data-valmsg-replace="true"></span></div><input type="submit" value="Save" class="fancy-button" style="margin: 20px 0;" /> &nbsp;<div class="fancy-div"><a href="/Admin/Article">Cancel</a></div></fieldset></form> </div><div class="clearfix"></div></div></div><div class=sticky-push></div></div><footer class="frame-content footer sticky-footer"><div class=frame-content-bottombackground></div><div class=frame-content-topborder></div><div class=frame-content-bottomborder></div><div class="frame-content-main container" style="padding-top: 30px;"><div class=one-third><h2>About</h2><span>Welcome to my personal homepage. I'm a C# .NET person with a range of interests from jQuery and snowboarding to Mvc and Windows Phone.<br><br><a href="/Article/about">Read more</a></span></div><div class=one-third><h2>Blog</h2><span>Mostly about technical stuff that matters (to me) and what I have on my mind.</span></div><div class="one-third last"><h2>Contact</h2><h4>Base64</h4><span>dG9yZUBsZXJ2aWsuY29t</span><h4>MD5</h4><span>d7dcc845ce20611ef5fcb03e03ee25d5</span></div><div class=clearfix></div></div></footer></body></html>
