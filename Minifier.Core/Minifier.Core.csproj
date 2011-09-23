@@ -48,6 +48,7 @@
     <Compile Include="Bundlers\CssWithImagesBundler.cs" />
     <Compile Include="Bundlers\CssWithImagesMinify.cs" />
     <Compile Include="Bundlers\JsBundler.cs" />
+    <Compile Include="EmbedImages.cs" />
     <Compile Include="Minify.cs" />
     <Compile Include="MinifyJsHandler.cs" />
     <Compile Include="MinifyJsHelper.cs" />
