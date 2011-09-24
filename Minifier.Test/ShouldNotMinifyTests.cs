@@ -53,5 +53,11 @@ namespace Lervik.Minifier.Test
         {
             Assert.AreEqual(",\r\nconvert_urls : false,\r\n\r\n// Drop lists for link/image/media/template dialogs\r\ntemplate_external_list_url : \"lists/template_list.js\",\r\nexternal_link_list_url : \"lists/link_list.js\",\r\nexternal_image_list_url : \"lists/image_list.js\",\r\nmedia_external_list_url : \"lists/media_list.js\"\r\n\r\n});\r\n</script>", Minify.Complete(",\r\nconvert_urls : false,\r\n\r\n// Drop lists for link/image/media/template dialogs\r\ntemplate_external_list_url : \"lists/template_list.js\",\r\nexternal_link_list_url : \"lists/link_list.js\",\r\nexternal_image_list_url : \"lists/image_list.js\",\r\nmedia_external_list_url : \"lists/media_list.js\"\r\n\r\n});\r\n</script>"));
         }
+
+        [Test]
+        public void Test9()
+        {
+            Assert.AreEqual(" /> hasdmamsd </div>", Minify.Complete(" /> hasdmamsd </div>"));
+        }
     }
 }

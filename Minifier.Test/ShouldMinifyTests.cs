@@ -107,5 +107,11 @@ namespace Lervik.Minifier.Test
         {
             Assert.AreEqual("<div class=test>hmm</div><script type=\"test\">var x=y,postComment=function(){$(\"#comment-form\").validate();$(\"#comment-form\").valid()}", Minify.Complete("<div class=test>hmm</div><script type=\"test\">var x = y;\r\n   var postComment = function () {\r\n$(\"#comment-form\").validate();\r\n\r\nif ($(\"#comment-form\").valid()) {\r\n}\r\n  };"));
         }
+
+        [Test]
+        public void Test18()
+        {
+            Assert.AreEqual("x=y /> hasdmamsd </div>", Minify.Complete("x=\"y\" /> hasdmamsd </div>"));
+        }
     }
 }

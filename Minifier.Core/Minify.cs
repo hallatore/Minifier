@@ -23,13 +23,13 @@ namespace Lervik.Minifier.Core
             return html;
         }
 
-        private static readonly Regex RegexRemoveEndAttritbuteWhitespace = new Regex(" />", RegexOptions.Compiled);
+        private static readonly Regex RegexRemoveEndAttritbuteWhitespace = new Regex("\" />", RegexOptions.Compiled);
         private static readonly Regex RegexRemoveWhitespaces = new Regex("[ \r\n\t]+$", RegexOptions.Multiline | RegexOptions.Compiled);
 
         private static string MinifyComplete(string html)
         {
             // Change <a hmm="x" /> down to <a hmm="x"/>
-            html = RegexRemoveEndAttritbuteWhitespace.Replace(html, "/>");
+            html = RegexRemoveEndAttritbuteWhitespace.Replace(html, "\"/>");
 
             var sb = new StringBuilder();
             bool done = false;
@@ -175,36 +175,22 @@ namespace Lervik.Minifier.Core
             } while (!done);
         }
 
-        private static readonly Regex RegexRemoveStuff1 = new Regex("\r[ \r\n\t]*", RegexOptions.Multiline | RegexOptions.Compiled);
-        private static readonly Regex RegexRemoveStuff2 = new Regex(@"<!--(?!\[)[\w\W]{1}((.|\n)+?)-->", RegexOptions.Compiled);
-        private static readonly Regex RegexRemoveStuff3 = new Regex("[ ]+", RegexOptions.Compiled);
-        private static readonly Regex RegexRemoveStuff4 = new Regex(" />", RegexOptions.Compiled);
-        private static readonly Regex RegexRemoveStuff5 = new Regex("<br/>", RegexOptions.Compiled);
-        private static readonly Regex RegexTrimAttributes = new Regex("([a-zA-Z0-]+=)\"([a-zA-Z0-9-_.:]+)\"([ >])", RegexOptions.Compiled);
-        private static readonly Regex RegexTrimAttributes2 = new Regex("([a-zA-Z-]+=)\"([a-zA-Z0-9-_.:]+)\"/>", RegexOptions.Compiled);
+        private static readonly Regex WhitespaceThatStartWithReturn = new Regex("\r[ \r\n\t]*", RegexOptions.Multiline | RegexOptions.Compiled);
+        private static readonly Regex CommentsThatAreNotIEScriptTags = new Regex(@"<!--(?!\[)[\w\W]{1}((.|\n)+?)-->", RegexOptions.Compiled);
+        private static readonly Regex MultipleSpaces = new Regex("[ ]+", RegexOptions.Compiled);
+        private static readonly Regex BrTag = new Regex("<br/>", RegexOptions.Compiled);
+        private static readonly Regex TagAttributes = new Regex("([a-zA-Z0-]+=)\"([a-zA-Z0-9-_.:]+)\"([ >])", RegexOptions.Compiled);
+        private static readonly Regex TagAttributesWithEnding = new Regex("([a-zA-Z-]+=)\"([a-zA-Z0-9-_.:]+)\"/>", RegexOptions.Compiled);
 
         private static string MinifyPatch(string patch)
         {
             Debug.WriteLine("Patching: " + patch);
-
-            // Remove whitespace that starts with a return
-            patch = RegexRemoveStuff1.Replace(patch, string.Empty);
-
-            // Change <a hmm="x" /> down to <a hmm="x"/>
-            patch = RegexRemoveStuff4.Replace(patch, "/>");
-
-            // Remove comments that are not special ie-target script tags
-            patch = RegexRemoveStuff2.Replace(patch, string.Empty);
-
-            // Reduce multiple spaces down to one
-            patch = RegexRemoveStuff3.Replace(patch, " ");
-
-            patch = RegexRemoveStuff5.Replace(patch, "<br>");
-
-            // Replaces attribute-value="test-value" with attribute-value=test-value
-            patch = RegexTrimAttributes.Replace(patch, "$1$2$3");
-            patch = RegexTrimAttributes2.Replace(patch, "$1$2 />");
-
+            patch = WhitespaceThatStartWithReturn.Replace(patch, string.Empty);
+            patch = CommentsThatAreNotIEScriptTags.Replace(patch, string.Empty);
+            patch = MultipleSpaces.Replace(patch, " ");
+            patch = BrTag.Replace(patch, "<br>");
+            patch = TagAttributes.Replace(patch, "$1$2$3");
+            patch = TagAttributesWithEnding.Replace(patch, "$1$2 />");
             Debug.WriteLine("Patched: " + patch);
             return patch;
         }
