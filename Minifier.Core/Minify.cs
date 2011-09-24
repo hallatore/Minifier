@@ -252,45 +252,45 @@ namespace Lervik.Minifier.Core
         //    return html;
         //}
 
-        private static string MinifyQuick(string html)
-        {
-            var sb = new StringBuilder();
-            bool done = false;
-            int lastEnd = 0;
+        //private static string MinifyQuick(string html)
+        //{
+        //    var sb = new StringBuilder();
+        //    bool done = false;
+        //    int lastEnd = 0;
 
-            while (!done)
-            {
-                var index = html.IndexOf("<pre", lastEnd, StringComparison.InvariantCultureIgnoreCase);
+        //    while (!done)
+        //    {
+        //        var index = html.IndexOf("<pre", lastEnd, StringComparison.InvariantCultureIgnoreCase);
 
-                if (index == -1)
-                {
-                    done = true;
-                    break;
-                }
+        //        if (index == -1)
+        //        {
+        //            done = true;
+        //            break;
+        //        }
 
-                var x = RemoveWhitespace(html.Substring(lastEnd, html.Length - index));
-                sb.Append(x);
+        //        var x = RemoveWhitespace(html.Substring(lastEnd, html.Length - index));
+        //        sb.Append(x);
 
-                lastEnd = html.IndexOf("</pre>", lastEnd, StringComparison.InvariantCultureIgnoreCase);
+        //        lastEnd = html.IndexOf("</pre>", lastEnd, StringComparison.InvariantCultureIgnoreCase);
 
-                if (lastEnd == -1)
-                {
-                    return html;
-                }
-            }
+        //        if (lastEnd == -1)
+        //        {
+        //            return html;
+        //        }
+        //    }
 
-            var y = RemoveWhitespace(html.Substring(lastEnd, html.Length - lastEnd));
-            sb.Append(y);
+        //    var y = RemoveWhitespace(html.Substring(lastEnd, html.Length - lastEnd));
+        //    sb.Append(y);
 
-            return sb.ToString();
-        }
+        //    return sb.ToString();
+        //}
 
-        private static string RemoveWhitespace(string patch)
-        {
-            patch = Regex.Replace(patch, "\r[ \r\n\t]*", "", RegexOptions.Multiline | RegexOptions.Compiled);
-            patch = Regex.Replace(patch, "[ ]+", " ", RegexOptions.Compiled);
-            return patch;
-        }
+        //private static string RemoveWhitespace(string patch)
+        //{
+        //    patch = Regex.Replace(patch, "\r[ \r\n\t]*", "", RegexOptions.Multiline | RegexOptions.Compiled);
+        //    patch = Regex.Replace(patch, "[ ]+", " ", RegexOptions.Compiled);
+        //    return patch;
+        //}
 
         //private static string MinfyHtmlElements(string html)
         //{
