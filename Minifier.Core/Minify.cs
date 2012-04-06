@@ -24,7 +24,6 @@ namespace Lervik.Minifier.Core
         }
 
         private static readonly Regex RegexRemoveEndAttritbuteWhitespace = new Regex("\" />", RegexOptions.Compiled);
-        private static readonly Regex RegexRemoveWhitespaces = new Regex("[ \r\n\t]+$", RegexOptions.Multiline | RegexOptions.Compiled);
 
         private static string MinifyComplete(string html)
         {
@@ -32,10 +31,9 @@ namespace Lervik.Minifier.Core
             html = RegexRemoveEndAttritbuteWhitespace.Replace(html, "\"/>");
 
             var sb = new StringBuilder();
-            bool done = false;
             int lastEnd = 0;
 
-            while (!done)
+            while (true)
             {
                 var index = html.IndexOf("<script", lastEnd, StringComparison.InvariantCultureIgnoreCase);
 
@@ -50,14 +48,12 @@ namespace Lervik.Minifier.Core
 
                     if (endIndex != -1)
                     {
-
                         sb.Append(html.Substring(lastEnd, endIndex - lastEnd));
                         if (lastEnd == endIndex) break;
                         lastEnd = endIndex;
                     }
                     else
                     {
-                        done = true;
                         break;
                     }
                     continue;
@@ -65,7 +61,6 @@ namespace Lervik.Minifier.Core
 
                 // Append whatever before script-tag
                 var x = html.Substring(lastEnd, index - lastEnd);
-                //x = RegexRemoveWhitespaces.Replace(x, string.Empty);
                 GetMinifiedHtml(sb, x);
 
                 lastEnd = html.IndexOf("</script>", index, StringComparison.InvariantCultureIgnoreCase);
@@ -162,13 +157,13 @@ namespace Lervik.Minifier.Core
                     if (endOffset == -1)
                     {
                         sb.Append(html.Substring(offset, html.Length - offset));
-                        Debug.WriteLine("Skipping2: " + html.Substring(offset, html.Length - offset));
+                        Debug.WriteLine("Skipping4: " + html.Substring(offset, html.Length - offset));
                         done = true;
                     }
                     else
                     {
                         sb.Append(html.Substring(offset, endOffset - offset));
-                        Debug.WriteLine("Skipping3: " + html.Substring(offset, endOffset - offset));
+                        Debug.WriteLine("Skipping5: " + html.Substring(offset, endOffset - offset));
                         offset = endOffset;
                     }
                 }
@@ -217,197 +212,5 @@ namespace Lervik.Minifier.Core
         {
             return html.Contains("<");
         }
-
-        //public static string Basic(string content)
-        //{
-        //    return Minifier(content);
-        //}
-
-        //private static string Minifier(string html, bool complete = false)
-        //{
-        //    Debug.WriteLine("Minifying 3");
-        //    if (string.IsNullOrEmpty(html))
-        //        return string.Empty;
-
-        //    //html = MinifyGeneralHtml(html);
-
-        //    //if (complete)
-        //    //{
-        //    //    html = MinifyInlineJavaScript(html);
-        //    //    html = MinifyInlineCss(html);
-        //    //    //html = MinfyHtmlElements(html);
-        //    //}
-
-        //    return html;
-        //}
-
-        //private static string MinifyGeneralHtml(string html)
-        //{
-        //    html = Regex.Replace(html, ">[ \r\n\t]+<", "><", RegexOptions.Multiline | RegexOptions.Compiled);
-        //    html = Regex.Replace(html, " />", "/>", RegexOptions.Compiled);
-
-        //    // <!--[ \r\n\t]+(?i)\b(?!function|var |{|})((.|\n)+?)-->
-        //    html = Regex.Replace(html, @"<!--(?!\[)[\w\W]{1}((.|\n)+?)-->", "", RegexOptions.Compiled);
-
-        //    return html;
-        //}
-
-        //private static string MinifyQuick(string html)
-        //{
-        //    var sb = new StringBuilder();
-        //    bool done = false;
-        //    int lastEnd = 0;
-
-        //    while (!done)
-        //    {
-        //        var index = html.IndexOf("<pre", lastEnd, StringComparison.InvariantCultureIgnoreCase);
-
-        //        if (index == -1)
-        //        {
-        //            done = true;
-        //            break;
-        //        }
-
-        //        var x = RemoveWhitespace(html.Substring(lastEnd, html.Length - index));
-        //        sb.Append(x);
-
-        //        lastEnd = html.IndexOf("</pre>", lastEnd, StringComparison.InvariantCultureIgnoreCase);
-
-        //        if (lastEnd == -1)
-        //        {
-        //            return html;
-        //        }
-        //    }
-
-        //    var y = RemoveWhitespace(html.Substring(lastEnd, html.Length - lastEnd));
-        //    sb.Append(y);
-
-        //    return sb.ToString();
-        //}
-
-        //private static string RemoveWhitespace(string patch)
-        //{
-        //    patch = Regex.Replace(patch, "\r[ \r\n\t]*", "", RegexOptions.Multiline | RegexOptions.Compiled);
-        //    patch = Regex.Replace(patch, "[ ]+", " ", RegexOptions.Compiled);
-        //    return patch;
-        //}
-
-        //private static string MinfyHtmlElements(string html)
-        //{
-        //    var matches = Regex.Matches(html, @"<((.|\n)+?)>", RegexOptions.Multiline | RegexOptions.IgnoreCase | RegexOptions.Compiled);
-        //    var sb = new StringBuilder();
-
-        //    int lastEnd = 0;
-
-        //    foreach (Match match in matches)
-        //    {
-        //        if (Regex.IsMatch(match.Groups[1].Value, @"[ \t]+"))
-        //        {
-        //            var matchText = Regex.Replace(match.Groups[1].Value, @"n[ \t]+", " ", RegexOptions.Multiline | RegexOptions.Compiled);
-        //            matchText = string.Format("<{0}>", matchText);
-
-        //            if (match.Groups[0].Index > 0)
-        //                sb.Append(html.Substring(lastEnd, match.Groups[0].Index - lastEnd));
-
-        //            sb.Append(matchText);
-        //            lastEnd = match.Groups[0].Index + match.Groups[0].Length;
-        //        }
-        //    }
-
-        //    sb.Append(html.Substring(lastEnd, html.Length - lastEnd));
-        //    return sb.ToString();
-        //}
-
-        //private static string MinifyInlineCss(string html)
-        //{
-        //    //var matches = Regex.Matches(html, @"<style((.|\n)+?)<\/style>", RegexOptions.Multiline | RegexOptions.IgnoreCase | RegexOptions.Compiled);
-
-        //    //int offset = 0;
-        //    //foreach (Match match in matches)
-        //    //{
-        //    //    var matchText = Regex.Replace(match.Groups[1].Value, @";[ \r\n\t]+", ";", RegexOptions.Multiline | RegexOptions.Compiled);
-        //    //    matchText = Regex.Replace(matchText, @"{[ \r\n\t]+", "{", RegexOptions.Multiline | RegexOptions.Compiled);
-        //    //    matchText = Regex.Replace(matchText, @"\n[ \r\n\t]+", "\n", RegexOptions.Multiline | RegexOptions.Compiled);
-        //    //    matchText = Regex.Replace(matchText, @":[ \t]+", ":", RegexOptions.Multiline | RegexOptions.Compiled);
-        //    //    matchText = string.Format("<style{0}</style>", matchText);
-
-        //    //    int startLength = match.Groups[0].Index + match.Groups[0].Length + offset;
-        //    //    html = html.Substring(0, match.Groups[0].Index + offset) +
-        //    //        matchText +
-        //    //        html.Substring(startLength, html.Length - startLength);
-
-        //    //    offset += matchText.Length - match.Groups[0].Value.Length;
-        //    //}
-
-        //    //return html;
-
-        //    var matches = Regex.Matches(html, @"<style((.|\n)+?)<\/style>", RegexOptions.Multiline | RegexOptions.IgnoreCase | RegexOptions.Compiled);
-        //    var sb = new StringBuilder();
-
-        //    int lastEnd = 0;
-
-        //    foreach (Match match in matches)
-        //    {
-        //        var matchText = Regex.Replace(match.Groups[1].Value, @";[ \r\n\t]+", ";", RegexOptions.Multiline | RegexOptions.Compiled);
-        //        matchText = Regex.Replace(matchText, @"{[ \r\n\t]+", "{", RegexOptions.Multiline | RegexOptions.Compiled);
-        //        matchText = Regex.Replace(matchText, @"\n[ \r\n\t]+", "\n", RegexOptions.Multiline | RegexOptions.Compiled);
-        //        matchText = Regex.Replace(matchText, @":[ \t]+", ":", RegexOptions.Multiline | RegexOptions.Compiled);
-        //        matchText = string.Format("<style{0}</style>", matchText);
-
-        //        if (match.Groups[0].Index > 0)
-        //            sb.Append(html.Substring(lastEnd, match.Groups[0].Index - lastEnd));
-
-        //        sb.Append(matchText);
-        //        lastEnd = match.Groups[0].Index + match.Groups[0].Length;
-        //    }
-
-        //    sb.Append(html.Substring(lastEnd, html.Length - lastEnd));
-        //    return sb.ToString();
-        //}
-
-        //private static string MinifyInlineJavaScript(string html)
-        //{
-        //    //var matches = Regex.Matches(html, @"<script((.|\n)+?)<\/script>", RegexOptions.Multiline | RegexOptions.IgnoreCase | RegexOptions.Compiled);
-
-        //    //int offset = 0;
-        //    //foreach (Match match in matches)
-        //    //{
-        //    //    var matchText = Regex.Replace(match.Groups[1].Value, @";[ \r\n\t]+", ";", RegexOptions.Multiline | RegexOptions.Compiled);
-        //    //    matchText = Regex.Replace(matchText, @"{[ \r\n\t]+", "{", RegexOptions.Multiline | RegexOptions.Compiled);
-        //    //    matchText = Regex.Replace(matchText, @"\n[ \r\n\t]+", "\n", RegexOptions.Multiline | RegexOptions.Compiled);
-        //    //    matchText = string.Format("<script{0}</script>", matchText);
-
-        //    //    int startLength = match.Groups[0].Index + match.Groups[0].Length + offset;
-        //    //    html = html.Substring(0, match.Groups[0].Index + offset) +
-        //    //        matchText +
-        //    //        html.Substring(startLength, html.Length - startLength);
-
-        //    //    offset += matchText.Length - match.Groups[0].Value.Length;
-        //    //}
-
-        //    //return html;
-
-        //    var matches = Regex.Matches(html, @"<script((.|\n)+?)<\/script>", RegexOptions.Multiline | RegexOptions.IgnoreCase | RegexOptions.Compiled);
-        //    var sb = new StringBuilder();
-
-        //    int lastEnd = 0;
-
-        //    foreach (Match match in matches)
-        //    {
-        //        var matchText = Regex.Replace(match.Groups[1].Value, @";[ \r\n\t]+", ";", RegexOptions.Multiline | RegexOptions.Compiled);
-        //        matchText = Regex.Replace(matchText, @"{[ \r\n\t]+", "{", RegexOptions.Multiline | RegexOptions.Compiled);
-        //        matchText = Regex.Replace(matchText, @"\n[ \r\n\t]+", "\n", RegexOptions.Multiline | RegexOptions.Compiled);
-        //        matchText = string.Format("<script{0}</script>", matchText);
-
-        //        if (match.Groups[0].Index > 0)
-        //            sb.Append(html.Substring(lastEnd, match.Groups[0].Index - lastEnd));
-
-        //        sb.Append(matchText);
-        //        lastEnd = match.Groups[0].Index + match.Groups[0].Length;
-        //    }
-
-        //    sb.Append(html.Substring(lastEnd, html.Length - lastEnd));
-        //    return sb.ToString();
-        //}
     }
 }
